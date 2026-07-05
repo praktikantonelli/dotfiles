@@ -4,7 +4,6 @@ keybinds clear-defaults=true {
         // Optional: allow Ctrl-C / Ctrl-D to pass through if accidentally in tmux mode
         bind "Ctrl c" { Write 3;  }
         bind "Ctrl d" { Write 4;  }
-
     }
 
     tmux {
@@ -23,12 +22,9 @@ keybinds clear-defaults=true {
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
 
         bind "c" { NewTab; SwitchToMode "Normal"; }
-        bind "," { SwitchToMode "RenameTab"; }
 
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "X" { CloseTab; SwitchToMode "Normal"; }
-
-        bind "[" { SwitchToMode "Scroll"; }
 
         bind "h" "Left"  { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "j" "Down"  { MoveFocus "Down"; SwitchToMode "Normal"; }
@@ -42,28 +38,6 @@ keybinds clear-defaults=true {
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Space" { NextSwapLayout; SwitchToMode "Normal"; }
         bind "d" { Detach; }
-    }
-
-    scroll {
-        bind "Esc" { SwitchToMode "Normal"; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
-
-        bind "j" "Down" { ScrollDown; }
-        bind "k" "Up" { ScrollUp; }
-        bind "PageDown" "Ctrl f" { PageScrollDown; }
-        bind "PageUp" "Ctrl b" { PageScrollUp; }
-        bind "d" { HalfPageScrollDown; }
-        bind "u" { HalfPageScrollUp; }
-    }
-
-    renametab {
-        bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
-        bind "Ctrl c" { SwitchToMode "Normal"; }
-    }
-
-    renamepane {
-        bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
-        bind "Ctrl c" { SwitchToMode "Normal"; }
     }
 }
 
